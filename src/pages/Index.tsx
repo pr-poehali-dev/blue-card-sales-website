@@ -2,7 +2,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import Icon from '@/components/ui/icon';
 import { useNavigate } from 'react-router-dom';
-import AnimatedSphere from '@/components/AnimatedSphere';
+import EarthGlobe from '@/components/EarthGlobe';
 
 const Index = () => {
   const navigate = useNavigate();
@@ -30,22 +30,22 @@ const Index = () => {
 
   return (
     <div className="min-h-screen overflow-hidden">
-      <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-blue-100 via-purple-50 to-pink-100">
-        <div className="absolute inset-0 bg-gradient-to-br from-cyan-100/50 via-blue-100/30 to-purple-100/50" />
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-primary via-primary/90 to-secondary">
+        <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 via-transparent to-primary/30" />
         
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in">
               <div className="mb-8">
-                <div className="inline-block px-4 py-2 bg-white/60 backdrop-blur-sm rounded-full text-sm font-medium text-primary mb-6">
+                <div className="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium text-primary-foreground mb-6">
                   AIO — PRODUCT ALPHA
                 </div>
-                <h1 className="text-6xl lg:text-7xl font-bold mb-6 text-primary leading-tight">
+                <h1 className="text-6xl lg:text-7xl font-bold mb-6 text-primary-foreground leading-tight">
                   Синяя карта<br />
                   для новых<br />
                   возможностей
                 </h1>
-                <p className="text-xl text-muted-foreground mb-8 max-w-lg leading-relaxed">
+                <p className="text-xl text-primary-foreground/90 mb-8 max-w-lg leading-relaxed">
                   Оформите синюю карту и получите доступ к качественному страхованию. Мы делаем процесс простым и быстрым.
                 </p>
               </div>
@@ -53,7 +53,7 @@ const Index = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
                   size="lg" 
-                  className="bg-primary hover:bg-primary/90 text-white text-lg px-8 py-6 rounded-full shadow-lg transform hover:scale-105 transition-all"
+                  className="bg-secondary hover:bg-secondary/90 text-white text-lg px-8 py-6 rounded-full shadow-lg transform hover:scale-105 transition-all"
                   onClick={() => navigate('/blue-card')}
                 >
                   Начать оформление
@@ -61,14 +61,14 @@ const Index = () => {
                 <Button 
                   size="lg" 
                   variant="outline" 
-                  className="border-2 border-primary/20 text-primary hover:bg-primary/5 text-lg px-8 py-6 rounded-full"
+                  className="border-2 border-white/30 text-white hover:bg-white/10 text-lg px-8 py-6 rounded-full backdrop-blur-sm"
                   onClick={() => document.getElementById('insurance')?.scrollIntoView({ behavior: 'smooth' })}
                 >
                   Подробнее
                 </Button>
               </div>
 
-              <div className="mt-12 flex items-center gap-8 text-sm text-muted-foreground">
+              <div className="mt-12 flex items-center gap-8 text-sm text-primary-foreground/80">
                 <div className="flex items-center gap-2">
                   <Icon name="Users" size={20} />
                   <span>Более 10,000 клиентов</span>
@@ -80,14 +80,14 @@ const Index = () => {
               </div>
             </div>
 
-            <div className="hidden lg:flex justify-center items-center animate-scale-in">
-              <AnimatedSphere />
+            <div className="hidden lg:flex justify-center items-center animate-scale-in h-[600px]">
+              <EarthGlobe />
             </div>
           </div>
         </div>
 
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-          <Icon name="ChevronDown" size={32} className="text-primary/40" />
+          <Icon name="ChevronDown" size={32} className="text-primary-foreground/60" />
         </div>
       </section>
 
